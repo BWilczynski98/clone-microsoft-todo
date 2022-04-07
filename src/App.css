@@ -1,0 +1,32 @@
+.grid-two-rows {
+    display: grid;
+    grid-template-rows: 5vh 95vh;
+    grid-template-areas:
+        "search-bar"
+        "user-interface"
+    ;
+}
+
+.grid-three-columns {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-areas:
+        "left-panel task-form task-form"
+    ;
+}
+
+.search-bar {
+    grid-area: search-bar;
+}
+
+.user-interface {
+    grid-area: user-interface;
+}
+
+.left-panel {
+    grid-area: left-panel;
+}
+
+.task-form {
+    grid-area: task-form;
+}

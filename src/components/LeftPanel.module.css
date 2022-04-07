@@ -1,0 +1,35 @@
+.wrapper {
+    height: 95vh;
+    background-color: #f3f2f1;
+    position: relative;
+}
+
+.container {
+    margin-top: 20px;
+    position: absolute;
+    width: 100%;
+}
+
+.container div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    padding: 0 20px;
+    color: #323130;
+    column-gap: 5px;
+}
+
+.container .icons {
+    font-size: 16px;
+}
+
+.container div:hover {
+    cursor: pointer;
+    background-color: #fafafa;
+}
+
+.link {
+    text-decoration: none;
+}
