@@ -13,7 +13,6 @@ const SearchBar = () => {
         setActive(false)
     };
 
-    console.log(active);
     return (
         <div className={styles.wrapper}>
             <div>

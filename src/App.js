@@ -30,13 +30,3 @@ function App() {
 
 export default App;
 
-
-
-  // <div className="search-bar">
-  //   <SearchBar />
-  // </div>
-  // <div className="grid-three-columns user-interface">
-  //   <div className="left-panel" ><LeftPanel /></div>
-  //   <div className="task-form" ><TaskForm /></div>
-  // </div>
-

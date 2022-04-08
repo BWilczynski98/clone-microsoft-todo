@@ -1,20 +1,16 @@
 .container {
-
+    display: flex;
+    align-items: center;
     background-color: #f3f2f1;
-    height: 50px;
-    border-radius: 2px;
-}
-
-.container-active {
-    height: 80px;
-
+    height: 60px;
+    border-radius: 3px;
 }
 
 .input {
-    background-color: white;
+    background-color: transparent;
     outline: none;
     border: none;
-    width: 90%;
+    width: 96%;
     height: 30px;
 }
 
@@ -24,6 +20,87 @@
 }
 
 .icon {
-    width: 4%;
+    width: 3%;
     color: #257ad9;
+}
+.icon:hover {
+    cursor: pointer;
+}
+
+/* After activation */
+.container-active__focus {
+    flex-direction: column;
+    justify-content: center;
+    align-items: unset;
+    height: 100px;
+    row-gap: 10px;
+}
+
+.container-active__focus .input {
+    background-color: #ffffff;
+    border-bottom: 1px solid #257ad9;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.container-active__focus .input-unfocus {
+    border: none;
+    background-color: #f3f2f1;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3%;
+    width: 96%;
+}
+
+.top .icon {
+    font-size: 20px;
+    color: #797775;
+}
+
+.top .icon:hover {
+    cursor: pointer;
+}
+
+.bottom-icons-container .icons {
+    font-size: 18px;
+    color: #797775;
+}
+
+.bottom-icons-container {
+    display: flex;
+    gap: 5px
+}
+
+.bottom-icons-container div {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+}
+
+.bottom-icons-container div:hover {
+    background-color: #edebe9;
+    cursor: pointer;
+}
+
+.bottom .btn-task-add {
+    border: none;
+    color: #a19f9d;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.bottom .btn-task-add:hover {
+    cursor: pointer;
 }
