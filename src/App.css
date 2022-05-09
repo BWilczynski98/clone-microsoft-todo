@@ -7,6 +7,12 @@
     ;
 }
 
+.grid-two-columns {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    grid-template-areas: "task-form task-form"
+    ;
+}
 .grid-three-columns {
     display: grid;
     grid-template-columns: 15% 70% 15%;
@@ -29,4 +35,9 @@
 
 .task-form {
     grid-area: task-form;
+}
+.burger {
+    position: absolute;
+    margin: 20px 0 0 20px;
+    z-index: 1;
 }

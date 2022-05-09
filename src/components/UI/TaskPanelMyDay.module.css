@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title {
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.date {
+    font-weight: 200;
+    font-size: 12px;
+    color: #797775;
+}
+
+.btn-sort {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #797775;
+    width: 79px;
+    height: 32px;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.btn-sort:hover {
+    background-color: #edebe9;
+    cursor: pointer;
+}

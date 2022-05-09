@@ -1,27 +1,35 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from './TaskInput.module.css'
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsCircle } from "react-icons/bs";
 import { BiCalendar, BiBell, BiRepeat } from 'react-icons/bi';
-
+import { Store } from '../store/StoreProvider';
 
 const TaskInput = () => {
+    const { dispatch } = useContext(Store)
     const [active, setActive] = useState(false);
     const [focus, setFocus] = useState(false);
     const [icon, setIcon] = useState(<AiOutlinePlus className={styles.icon} />);
+    const [task, setTask] = useState('');
+
+
 
     const inputHandler = () => {
         setActive(true)
-        setIcon(prevVal => prevVal = <BsCircle className={styles.icon} />)
-        setFocus(prevVal => prevVal = false)
+        setIcon(<BsCircle className={styles.icon} />)
+        setFocus(false)
     };
 
     const focusHandler = () => {
         setFocus(true);
-        setIcon(prevVal => prevVal = <AiOutlinePlus className={styles.icon} />)
+        setIcon(<AiOutlinePlus className={styles.icon} />)
     };
 
-    if (active === false) {
+    const taskHandler = (item) => {
+        setTask(item.target.value)
+    }
+
+    const InactiveInput = () => {
         return (
             <div onClick={inputHandler} className={styles.container}>
                 {icon}
@@ -29,7 +37,9 @@ const TaskInput = () => {
 
             </div>
         );
-    } else {
+    }
+
+    const ActiveInput = () => {
         return (
             <div className={`${styles.container} ${styles[`container-active__focus`]}`}>
                 <div onClick={inputHandler} className={styles.top}>
@@ -37,6 +47,8 @@ const TaskInput = () => {
                     <input
                         type='text'
                         className={`${styles.input} ${focus && styles['input-unfocus']}`}
+                        onChange={taskHandler}
+                        value={task}
                         placeholder='Add task'
                     />
                 </div>
@@ -45,21 +57,25 @@ const TaskInput = () => {
                         <div onClick={focusHandler}>
                             <BiCalendar className={styles.icons} />
                         </div>
-                        <div>
+                        <div onClick={focusHandler}>
                             <BiBell className={styles.icons} />
                         </div>
-                        <div>
+                        <div onClick={focusHandler}>
                             <BiRepeat className={styles.icons} />
                         </div>
                     </div>
                     <div>
-                        <button className={styles['btn-task-add']}>Add</button>
+                        <button className={styles['btn-task-add']} onClick={() => {
+                            dispatch({ type: 'ADD', payloud: task })
+                        }}>Add</button>
                     </div>
                 </div>
             </div>
         );
-
     }
+
+    return !active ? <InactiveInput /> : <ActiveInput />
+    // return <ActiveInput />
 
 }
 
